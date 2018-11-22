@@ -1,0 +1,20 @@
+{
+  "name": "mobilemenuwp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/MobileMenuButton.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "laz.brannigan@gmail.com",
+  "license": "GPL-3.0",
+    "devDependencies": {
+    "browserify": "^14.3.0"
+  },
+  "dependencies": {
+    "Static.js": "gist:b6454cf8fe004ee9f0264aa301007202",
+    "css-transition": "git+https://github.com/br4nnigan/css-transition.git",
+    "hammerjs": "^2.0.8",
+    "promise-polyfill": "^6.0.2"
+  }
+}

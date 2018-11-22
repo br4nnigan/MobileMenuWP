@@ -1,0 +1,194 @@
+@widthDesktop: 960px;
+@widthTablet: 500px;
+
+@desktop: e("screen and (min-width: @{widthDesktop})");
+@tablet: e("screen and (min-width: @{widthTablet})");
+
+@color-background: grey;
+
+nav{
+	a {
+		text-decoration: none;
+		user-select: none;
+	}
+}
+
+.nav-container{
+	text-align: right;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	left: 0;
+
+	@media @desktop{
+		overflow: visible;
+		background: transparent;
+		display: inline-block;
+		width: auto;
+		position: static;
+		margin-bottom: -1px!important;
+		height: 100%;
+	}
+
+}
+
+#nav-main{
+	font-size: initial;
+	display: block;
+	vertical-align: bottom;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: @color-background;
+	transition: all 200ms ease-out;
+
+	@media @desktop{
+		background: transparent;
+		display: inline-block;
+		width: auto;
+		position: static;
+	}
+
+	&.nav--open{
+		opacity: 1;
+		transform: translateY(100%);
+	}
+
+	ul{
+		.neutral-ul;
+		margin: 0;
+	}
+
+	.sub-menu{
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: auto;
+		transition: transform 130ms ease-out;
+		transition-property: transform, opacity;
+		height: auto;
+		background: rgba(0,0,0,0.1);
+		opacity: 1;
+		transform: translateY(1px); // 1 weil blaue blitze linie
+
+		@media @desktop{
+			transform: translateY(-1px); // -1 weil weisse blitzer linie
+			opacity: 0;
+			height: 0;
+			overflow: hidden;
+			left: auto;
+			right: auto;
+			background: @color-background;
+		}
+
+		.menu-item{
+			width: 100%;
+
+			&:last-child{
+				a{
+					padding-bottom: 1em;
+				}
+			}
+			a{
+				padding: .75em 1.5em;
+
+				@media @desktop{
+					text-align: left;
+				}
+			}
+		}
+	}
+
+	.menu-item{
+		display: block;
+		text-align: center;
+		padding: 0;
+		vertical-align: top;
+		overflow: hidden;
+		position: relative;
+
+		@media @desktop{
+			display: inline-block;
+
+			&:hover{
+				overflow: visible;
+
+				&:after{
+					transform: scaleY(1);
+					opacity: 1;
+				}
+				a{
+					color: white!important;
+				}
+				.sub-menu{
+					height: auto;
+					background: @color-background;
+					opacity: 1;
+					transform: translateY(-1px); // -1 weil weisse blitzer linie
+				}
+			}
+			&.current_page_ancestor,
+			&.current_page_item {
+				a{
+					color: @color-background;
+				}
+			}
+		}
+
+		&:after{
+			transform: scaleY(0);
+			transform-origin: center bottom;
+			transition: all 150ms ease-out;
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			opacity: 0;
+			height: 100%;
+			width: 100%;
+			background: @color-background;
+		}
+
+		a{
+			padding: 1em 1.5em;
+			display: block;
+			text-align: center;
+			position: relative;
+			.h5;
+			line-height: 1.4;
+			margin: 0;
+			z-index: 1;
+			font-weight: 500;
+			color: white;
+
+			@media @desktop{
+				color: black;
+			}
+		}
+	}
+
+	.nav-button-more{
+		border: none;
+		background: none;
+		transition: all 150ms ease-out;
+		position: absolute;
+		background-image: url("hover-arrow-white.svg");
+		background-size: 18px 18px;
+		background-repeat: no-repeat;
+		background-position: center;
+		width: 40px;
+		height: 40px;
+		margin-top: -10px;
+		margin-left: 10px;
+		transform: rotate(90deg);
+
+		@media @desktop{
+			display: none;
+		}
+
+		&.nav-button-more--open{
+			transform: rotate(-90deg);
+		}
+	}
+
+}
