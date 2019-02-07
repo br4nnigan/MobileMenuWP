@@ -1,15 +1,16 @@
 {
-  "name": "mobilemenuwp",
+  "name": "MobileMenuWP",
   "version": "1.0.0",
   "description": "",
-  "main": "src/MobileMenuButton.js",
+  "main": "src/MobileMenu.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "demo": "browserify src/demo.js -o demo/mobileMenuDemo.js & lessc src/mobileMenu.less demo/mobileMenuDemo.css"
   },
   "author": "laz.brannigan@gmail.com",
   "license": "GPL-3.0",
-    "devDependencies": {
-    "browserify": "^14.3.0"
+  "devDependencies": {
+    "browserify": "^14.3.0",
+    "less": "^3.9.0"
   },
   "dependencies": {
     "Static.js": "gist:b6454cf8fe004ee9f0264aa301007202",

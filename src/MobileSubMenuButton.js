@@ -8,7 +8,8 @@ function MobileSubMenuButton( buttonElement ) {
 		open: open,
 		close: close,
 		destroy: destroy
-	}
+	};
+
 	var hammer = null;
 	var isOpen = null;
 
@@ -21,7 +22,7 @@ function MobileSubMenuButton( buttonElement ) {
 
 	var classes = {
 		OPEN: "nav-button-more--open"
-	}
+	};
 
 	function initialize() {
 
