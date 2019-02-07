@@ -1,3 +1,3 @@
-#MobileMenu
+# MobileMenu
 
-Simple mobile menu. Oriented at Wordpress menu DOM. See demo!
+Simple mobile menu. Oriented on Wordpress menu DOM. See demo!
