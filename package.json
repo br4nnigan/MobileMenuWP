@@ -2,7 +2,7 @@
   "name": "MobileMenuWP",
   "version": "1.0.0",
   "description": "",
-  "main": "src/MobileMenu.js",
+  "main": "src/js/modules/MobileMenu.js",
   "scripts": {
     "demo": "browserify src/js/demo.js -o demo/mobileMenuDemo.js & lessc src/less/mobileMenu.less demo/mobileMenuDemo.css"
   },
