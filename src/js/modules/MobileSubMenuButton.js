@@ -1,4 +1,3 @@
-var Hammer = require("hammerjs");
 var transition = require("css-transition");
 var Static = require("Static.js");
 
@@ -10,7 +9,6 @@ function MobileSubMenuButton( buttonElement ) {
 		destroy: destroy
 	};
 
-	var hammer = null;
 	var isOpen = null;
 
 	// var menu = null;
@@ -42,8 +40,7 @@ function MobileSubMenuButton( buttonElement ) {
 		}
 
 		isOpen = false;
-		hammer = new Hammer(buttonElement);
-		hammer.on("tap", onButtonClick);
+		buttonElement.addEventListener("click", onButtonClick);
 
 		document.addEventListener( "onBeforeDomChange", close );
 		document.addEventListener( "MobileSubMenuButtonOpen", MobileSubMenuButtonOpen );
@@ -57,10 +54,7 @@ function MobileSubMenuButton( buttonElement ) {
 
 	function destroy() {
 
-		if ( hammer ) {
-			hammer.destroy();
-			hammer = null;
-		}
+		buttonElement.removeEventListener("click", onButtonClick);
 		document.removeEventListener( "onAfterDomChange", close );
 	}
 

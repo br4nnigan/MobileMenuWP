@@ -1,18 +1,13 @@
-var Hammer = require("hammerjs");
-var transition = require("css-transition");
-
 function TriggerButton( options ) {
-
-	var hammer = null;
 
 	this.isTriggered = false;
 
 	this.destroy = function() {
 
-		if ( hammer ) {
-			hammer.destroy();
-			hammer = null;
+		if ( !(options.element instanceof Element) ) {
+			return false;
 		}
+		options.element.removeEventListener("click", onTrigger);
 	};
 
 	function initialize() {
@@ -22,9 +17,7 @@ function TriggerButton( options ) {
 		if ( !(options.element instanceof Element) ) {
 			return false;
 		}
-
-		hammer = new Hammer(options.element);
-		hammer.on("tap", onTrigger);
+		options.element.addEventListener("click", onTrigger);
 	}
 
 	function onTrigger( event ) {
