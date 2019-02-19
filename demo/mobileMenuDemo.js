@@ -3825,6 +3825,10 @@ exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate :
 };
 }).call(this,require("timers").setImmediate,require("timers").clearImmediate)
 },{"process/browser.js":4,"timers":6}],7:[function(require,module,exports){
+var MobileMenu = require("./modules/MobileMenu.js");
+
+var mobileMenu = new MobileMenu();
+},{"./modules/MobileMenu.js":8}],8:[function(require,module,exports){
 var Static = require("Static.js");
 var MobileSubMenuButton = require("./MobileSubMenuButton");
 var TriggerButton = require("./TriggerButton");
@@ -3881,7 +3885,7 @@ if ( typeof module == "object" ) {
 }
 
 
-},{"./MobileSubMenuButton":8,"./TriggerButton":9,"Static.js":1}],8:[function(require,module,exports){
+},{"./MobileSubMenuButton":9,"./TriggerButton":10,"Static.js":1}],9:[function(require,module,exports){
 var Hammer = require("hammerjs");
 var transition = require("css-transition");
 var Static = require("Static.js");
@@ -4001,7 +4005,7 @@ if ( typeof module == "object" ) {
 }
 
 
-},{"Static.js":1,"css-transition":2,"hammerjs":3}],9:[function(require,module,exports){
+},{"Static.js":1,"css-transition":2,"hammerjs":3}],10:[function(require,module,exports){
 var Hammer = require("hammerjs");
 var transition = require("css-transition");
 
@@ -4047,8 +4051,4 @@ if ( typeof module == "object" ) {
 }
 
 
-},{"css-transition":2,"hammerjs":3}],10:[function(require,module,exports){
-var MobileMenu = require("./MobileMenu.js");
-
-var mobileMenu = new MobileMenu();
-},{"./MobileMenu.js":7}]},{},[10]);
+},{"css-transition":2,"hammerjs":3}]},{},[7]);

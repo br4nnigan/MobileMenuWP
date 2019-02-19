@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/MobileMenu.js",
   "scripts": {
-    "demo": "browserify src/demo.js -o demo/mobileMenuDemo.js & lessc src/mobileMenu.less demo/mobileMenuDemo.css"
+    "demo": "browserify src/js/demo.js -o demo/mobileMenuDemo.js & lessc src/less/mobileMenu.less demo/mobileMenuDemo.css"
   },
   "author": "laz.brannigan@gmail.com",
   "license": "GPL-3.0",
