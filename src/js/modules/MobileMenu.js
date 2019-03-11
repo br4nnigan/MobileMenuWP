@@ -5,7 +5,9 @@ var TriggerButton = require("./TriggerButton");
 function MobileMenu() {
 
 	var api = {
-		destroy: destroy
+		destroy: destroy,
+		open: open,
+		close: close
 	};
 
 	var nav = null;
@@ -32,7 +34,14 @@ function MobileMenu() {
 	}
 
 	function onResize() {
+		close();
+	}
 
+	function open() {
+		nav.classList.add( "nav--open" );
+	}
+
+	function close() {
 		nav.classList.remove( "nav--open" );
 	}
 
